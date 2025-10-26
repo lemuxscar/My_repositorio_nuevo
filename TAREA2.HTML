@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Responsivo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f6fc;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #3366cc;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 20px;
+      padding: 20px;
+      flex: 1;
+    }
+
+    aside {
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    section {
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background-color: #e6f0ff;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #3366cc;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+
+    /* Diseño responsivo */
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+     Dashboard 
+  </header>
+
+  <main>
+    <aside>
+      <h3>CLASE DISEÑO WEB</h3>
+      <ul>
+        <li>Estudiante</li>
+        <li>Materia</li>
+        <li>Tareas</li>
+        <li>Examenes</li>
+      </ul>
+    </aside>
+
+    <section>
+      <div class="card">scarleth lemuz 1</div>
+      <div class="card">diseño wed 2</div>
+      <div class="card">2 Tareas 3</div>
+      <div class="card">guia 4</div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Instituto María Auxiliadora - Dashboard 
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f8fa;
+            text-align: center;
+        }
+        h1 {
+            color: #3366cc;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 90%;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+        }
+        th {
+            background-color: #e6f0ff;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 4px 6px;
+            display: block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabla Comparativa de Eventos en JavaScript</h1>
+
+    <table>
+        <tr>
+            <th>Nombre del Evento</th>
+            <th>Descripción</th>
+            <th>Ejemplo de Uso</th>
+        </tr>
+
+        <tr>
+            <td>Al hacer clic (onclick)</td>
+            <td>Se ejecuta cuando el usuario hace clic sobre un elemento.</td>
+            <td><code>&lt;button onclick="alert('¡Hola!')"&gt;Haz clic aquí&lt;/button&gt;</code></td>
+        </tr>
+
+        <tr>
+            <td>Al pasar el mouse (onmouseover)</td>
+            <td>Ocurre cuando el puntero del mouse pasa sobre un elemento.</td>
+            <td><code>&lt;div onmouseover="this.style.color='red'"&gt;Pasa el mouse por aquí&lt;/div&gt;</code></td>
+        </tr>
+
+        <tr>
+            <td>Al presionar una tecla (onkeydown)</td>
+            <td>Se activa cuando el usuario presiona una tecla del teclado.</td>
+            <td><code>&lt;input onkeydown="alert('Presionaste una tecla')" placeholder="Escribe algo..."&gt;</code></td>
+        </tr>
+
+        <tr>
+            <td>Al cambiar el texto (onchange)</td>
+            <td>Se ejecuta cuando cambia el valor de un campo de entrada.</td>
+            <td><code>&lt;input type="text" onchange="alert('Texto cambiado')" placeholder="Escribe y cambia..."&gt;</code></td>
+        </tr>
+
+        <tr>
+            <td>Al cargar la página (onload)</td>
+            <td>Se activa cuando la página web termina de cargarse.</td>
+            <td><code>&lt;body onload="alert('Página cargada correctamente')"&gt;&lt;/body&gt;</code></td>
+        </tr>
+    </table>
+
+</body>
+</html>
