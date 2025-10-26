@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #072849;
+            transition: background-color 0.5s;
+        }
+
+        h2 {
+            color: #1565c0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #miContenedor {
+            background-color: #4d6a77;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .caja {
+            background-color: #b259aa;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .caja:hover {
+            background-color: #482c61;
+            transform: scale(1.05);
+            margin-left: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            transition: color 0.3s, letter-spacing 0.3s;
+        }
+
+        #salida {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #704278;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h2>Eventos con JavaScript</h2>
+
+    <div id="miContenedor">
+        <p>Este es un párrafo.</p>
+    </div>
+
+    <div class="caja">🐱 Gato</div>
+    <div class="caja">🐶 Perro</div>
+
+    <p id="mensaje1">Buenos días profesor</p>
+    <p id="mensaje2">Hoy es un día lindo</p>
+
+    <div id="salida"></div>
+
+    <script>
+        // Datos del alumno
+        const nombre = "Scarleth Lemuz";
+        const anio = 2005;
+        const anioActual = 2025;
+        const edad = anioActual - anio;
+
+        // Mostrar resultados en pantalla
+        const salida = document.getElementById("salida");
+        salida.innerHTML = `
+            <strong>Nombre:</strong> ${nombre}<br>
+            <strong>Año de nacimiento:</strong> ${anio}<br>
+            <strong>Año actual:</strong> ${anioActual}<br>
+            <strong>Edad:</strong> ${edad} años
+        `;
+
+        // Acceso a elementos del DOM
+        const contenedor = document.getElementById("miContenedor");
+        const cajas = document.querySelectorAll(".caja");
+        const mensaje1 = document.getElementById("mensaje1");
+        const mensaje2 = document.getElementById("mensaje2");
+
+        // Mostrar contenido adicional
+        salida.innerHTML += `
+            <hr>
+            <strong>Contenedor:</strong> ${contenedor.innerText}<br>
+            <strong>Primera caja:</strong> ${cajas[0].textContent}<br>
+            <strong>Mensaje:</strong> ${mensaje1.textContent}
+        `;
+
+        // EVENTO 1: Click en el contenedor (cambia color y tamaño)
+        contenedor.addEventListener("click", () => {
+            contenedor.style.backgroundColor = "#b3e5fc";
+            contenedor.style.padding = "25px";
+            salida.innerHTML += "<p>💬 Hiciste clic en el contenedor. Se agrandó y cambió de color.</p>";
+        });
+
+        // EVENTO 2: Pasar el ratón sobre las cajas (cambia color y espacio)
+        cajas.forEach(caja => {
+            caja.addEventListener("mouseover", () => {
+                caja.style.backgroundColor = "#42a5f5";
+                caja.style.letterSpacing = "2px";
+                salida.innerHTML += `<p>🐾 Pasaste el ratón sobre: <strong>${caja.textContent}</strong></p>`;
+            });
+            caja.addEventListener("mouseout", () => {
+                caja.style.backgroundColor = "#bbdefb";
+                caja.style.letterSpacing = "normal";
+            });
+        });
+
+        // EVENTO 3: Click en el primer mensaje (cambia color y espaciado de letras)
+        mensaje1.addEventListener("click", () => {
+            mensaje1.style.color = "#283593";
+            mensaje1.style.fontWeight = "bold";
+            mensaje1.style.letterSpacing = "3px";
+            salida.innerHTML += "<p>📘 Cambiaste el estilo del mensaje 1.</p>";
+        });
+
+        // EVENTO 4: Doble clic en el segundo mensaje (cambia fondo del cuerpo)
+        mensaje2.addEventListener("dblclick", () => {
+            document.body.style.backgroundColor = "#e8f5e9";
+            salida.innerHTML += "<p>🌈 Doble clic detectado: ¡El fondo de la página cambió!</p>";
+        });
+    </script>
+</body>
+</html>
